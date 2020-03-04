@@ -4,7 +4,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 // Custom Imports
 import LandingPage from './pages/LandingPage'
-import Navbar from './components/Navbar'
 
 function App() {
    return (

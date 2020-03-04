@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // Custom Imports
 import burgerExpand from "../media/icons/burgerSelected.svg";
 import burgerUnexpand from "../media/icons/burgerUnselected.svg";
-import pifLogo from "../media/icons/pif-logo.svg";
+import pifLogo from "../media/icons/pif-logo-header.png";
 import HamburgerOptions from "./HamburgerOptions"
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
     <header className="bg-gray-900">
       <div className="flex flex-row justify-between items-center px-4 py-2">
         <div >
-          <img className="h-8" src={pifLogo} alt=""/>
+          <img className="h-12" src={pifLogo} alt=""/>
         </div>
         <div>
           <img className="h-8" src={expanded ? burgerUnexpand : burgerExpand} onClick={onHamburgerClick} alt="" />
