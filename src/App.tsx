@@ -1,13 +1,13 @@
+// React Imports
 import React from 'react';
-import Button from './components/button';
 
+// Custom Imports
+
+import Navbar from './components/Navbar'
 function App() {
    return (
-      <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
-         <h1>Super cool page</h1>
-         <Button onClick={() => console.log('I was clicked')}>
-            I am a button
-         </Button>
+      <div className="">
+         <Navbar/>
       </div>
    );
 }
