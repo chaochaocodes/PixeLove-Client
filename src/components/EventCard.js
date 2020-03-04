@@ -4,6 +4,9 @@ import React from "react";
 // Custom Imports
 import pifLogo from "../media/icons/pif-logo.png"; // PLACEHOLDER
 
+// This is a re-usable Card component for event info
+// Layout:
+// Event Logo, Event Information
 const EventCard = props => {
   // THIS IS PLACEHOLDER DATA TO STAND IN FOR PROPS
   const propSample = {
@@ -25,9 +28,12 @@ const EventCard = props => {
 
   return (
     <div className="flex flex-col items-center bg-white w-48 rounded-lg shadow-lg overflow-hidden">
+      {/* Event Logo */}
       <div className="h-16 w-16">
         <img className="object-cover" src={pifLogo} alt="" />
       </div>
+
+      {/* Event Information */}
       <div className="flex flex-col pl-2 bg-blue-400 w-full">
         <h1 className="text-s">
           {propSample.data.event[0].nonprofit.displayName}
