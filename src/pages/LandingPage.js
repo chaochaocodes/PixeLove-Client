@@ -19,7 +19,7 @@ const LandingPage = () => {
         </button>
       </div>
       <div className="flex flex-col items-center justify-center bg-yellow-900 flex-grow">
-        <h1 className="font-bold pb-2">VIEW UPCOMING EVENTS</h1>
+        <h1 className="font-bold pb-1">VIEW UPCOMING EVENTS</h1>
         <EventCard />
       </div>
     </div>

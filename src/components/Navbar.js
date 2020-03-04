@@ -2,33 +2,41 @@
 import React, { useState } from "react";
 
 // Custom Imports
-import burgerExpand from "../media/icons/burgerSelected.svg";
-import burgerUnexpand from "../media/icons/burgerUnselected.svg";
 import pifLogo from "../media/icons/pif-logo-header.png";
-import HamburgerOptions from "./HamburgerOptions"
+import HamburgerOptions from "./HamburgerOptions";
 
 const Navbar = () => {
-  
-    // state for the hamburger dropdown
-    const [expanded, setExpanded] = useState(false);
-  
-    // METHOD: click handler for hamburger dropdown toggle
-    const onHamburgerClick = (e) => {
-        setExpanded(!expanded);
-    }
+  // state for the hamburger dropdown
+  const [expanded, setExpanded] = useState(false);
 
-    // RETURN method
-    return (
+  // METHOD: click handler for hamburger dropdown toggle
+  const onHamburgerClick = e => {
+    setExpanded(!expanded);
+  };
+
+  // SVGs that are needed in this component
+  const hamburgerCollapseIcon = (
+    <svg className="h-8 w-8 fill-current text-red-500" onClick={onHamburgerClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+    </svg>
+  );
+
+  const hamburgerExpandIcon = (
+    <svg className="h-8 w-8 fill-current text-white" onClick={onHamburgerClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+    </svg>
+  );
+
+  // RETURN method
+  return (
     <header className="bg-gray-900">
       <div className="flex flex-row justify-between items-center px-4 py-2">
-        <div >
-          <img className="h-12" src={pifLogo} alt=""/>
-        </div>
         <div>
-          <img className="h-8" src={expanded ? burgerUnexpand : burgerExpand} onClick={onHamburgerClick} alt="" />
+          <img className="h-12" src={pifLogo} alt="" />
         </div>
+        <div>{expanded ? hamburgerCollapseIcon : hamburgerExpandIcon}</div>
       </div>
-      {expanded ? <HamburgerOptions/> : null}
+      {expanded ? <HamburgerOptions /> : null}
     </header>
   );
 };
