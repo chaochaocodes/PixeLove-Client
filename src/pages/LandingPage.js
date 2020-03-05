@@ -4,6 +4,7 @@ import React from "react";
 // Custom Imports
 import Navbar from "../components/Navbar";
 import EventCardCollection from "../components/EventCardCollection";
+import trophyGif from '../media/animations/trophy-rotate.gif'
 
 // This functional component renders the landing page
 // Layout (from top --> bottom):
@@ -16,7 +17,7 @@ const LandingPage = () => {
 
       {/* Mission Statement */}
       <div className="flex items-center justify-center h-64">
-        <h1 className="font-bold">Mission Statement</h1>
+        <img className="h-64" src={trophyGif} alt="" />
       </div>
 
       {/* Upcoming Events */}
