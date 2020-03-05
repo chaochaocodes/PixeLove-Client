@@ -8,7 +8,7 @@ import LandingPage from './pages/LandingPage'
 function App() {
    return (
       <Router>
-         <div>
+         <div className="bg-blue-200 text-blue-900">
             <LandingPage />
          </div>
       </Router>

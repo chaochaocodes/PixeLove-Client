@@ -2,17 +2,17 @@
 import React, { useState } from "react";
 
 // Custom Imports
-import pifLogo from "../media/icons/pif-logo-header.png";
 import HamburgerOptions from "./HamburgerOptions";
 
 // This is a dynamic navbar that expands to show links
 // Layout:
 // Header Links, Collapsible Menu Options
 const Navbar = () => {
-  // state for the hamburger dropdown
+  // STATE: Whether menu options are visible or not
   const [expanded, setExpanded] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
-  // METHOD: click handler for hamburger dropdown toggle
+  // METHOD: click handler for toggling menu visibility
   const onHamburgerClick = e => {
     setExpanded(!expanded);
   };
@@ -20,7 +20,7 @@ const Navbar = () => {
   // SVG Icon for collapsing menu
   const hamburgerCollapseIcon = (
     <svg
-      className="h-8 w-8 fill-current text-red-500"
+      className="h-6 w-6 fill-current text-red-500"
       onClick={onHamburgerClick}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
@@ -32,7 +32,7 @@ const Navbar = () => {
   // SVG Icon for expanding menu
   const hamburgerExpandIcon = (
     <svg
-      className="h-8 w-8 fill-current text-white"
+      className="h-6 w-6 fill-current text-white"
       onClick={onHamburgerClick}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
@@ -45,14 +45,29 @@ const Navbar = () => {
     <header className="bg-gray-900">
       {/* Header Links */}
       <div className="flex flex-row justify-between items-center px-4 py-2">
+        <HamburgerOptions />
         <div>
-          <img className="h-12" src={pifLogo} alt="" />
+          {loggedIn ? (
+            expanded ? (
+              hamburgerCollapseIcon
+            ) : (
+              hamburgerExpandIcon
+            )
+          ) : (
+            <a
+              className="font-semibold rounded px-2 hover:bg-blue-700 text-blue-400 underline"
+              href="#"
+            >
+              Login
+            </a>
+          )}
         </div>
-        <div>{expanded ? hamburgerCollapseIcon : hamburgerExpandIcon}</div>
       </div>
 
       {/* Collapsible Menu Options */}
-      {expanded ? <HamburgerOptions /> : null}
+      {/* Add ternary based on isExpanded that
+          returns either a component (list) that
+          uses absolute positioning or null*/}
     </header>
   );
 };
