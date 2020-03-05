@@ -8,10 +8,10 @@ import trophyGif from '../media/animations/trophy-rotate.gif'
 
 // This functional component renders the landing page
 // Layout (from top --> bottom):
-// Navbar, Mission Statement, Upcoming Events
+// Navbar, Logo, Upcoming Events
 const LandingPage = () => {
   return (
-    <div className="flex flex-col h-screen w-screen">
+    <div className="flex flex-col w-screen">
       {/* Navbar */}
       <Navbar />
 

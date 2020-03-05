@@ -31,13 +31,23 @@ const EventCardCollection = props => {
             displayName: "Play It Backward",
             logo: "Insert url here"
           }
-        }
+        },
+        {
+          id: 3,
+          title: "Volunteering Event Title",
+          date: "2020-03-28",
+          address: "1234 Somewhere St, Seattle, WA, 98177",
+          nonprofit: {
+            displayName: "Play It Forward",
+            logo: "Insert url here"
+          }
+        },
       ]
     }
   };
 
   return (
-    <div className="flex flex-row w-screen overflow-x-scroll pb-4">
+    <div className="flex flex-col items-center w-screen overflow-x-scroll pb">
       {propSample.data.events.map(event => {
           return <EventCard event={event} key={event.id}/>
       })}

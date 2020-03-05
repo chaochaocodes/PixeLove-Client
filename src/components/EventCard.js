@@ -10,7 +10,7 @@ import pifLogo from "../media/icons/pif-logo.png"; // PLACEHOLDER
 const EventCard = props => {
 
   return (
-    <div className="flex flex-col bg-white m-1 items-center rounded-lg w-56 h-40 shadow-xl">
+    <div className="flex flex-col bg-white mb-3 items-center rounded-lg w-56 h-40 shadow-md">
       {/* Event Logo */}
       <div className="h-16 w-16">
         <img className="object-cover" src={pifLogo} alt="" />

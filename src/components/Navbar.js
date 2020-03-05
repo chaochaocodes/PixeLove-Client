@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // Custom Imports
-import HamburgerOptions from "./HamburgerOptions";
+import NavbarOptions from "./NavbarOptions";
 
 // This is a dynamic navbar that expands to show links
 // Layout:
@@ -45,7 +45,7 @@ const Navbar = () => {
     <header className="bg-gray-900">
       {/* Header Links */}
       <div className="flex flex-row justify-between items-center px-4 py-2">
-        <HamburgerOptions />
+        <NavbarOptions />
         <div>
           {loggedIn ? (
             expanded ? (
