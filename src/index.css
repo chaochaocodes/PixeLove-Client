@@ -9,10 +9,15 @@
 }
 body {
     font-family: DaFont;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    /* display:flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     background-color: var(--eggshell);
+    margin-left: 20px;
+}
+body.content {
+    justify-content: center;
+        align-items: center;
 }
 #landing-logo {
     height: 60%;
@@ -21,23 +26,18 @@ body {
 .title {
     display: flex;
     justify-content: center;
-    font-size: 6em;
+    font-size: 7vw;
+    padding: 0 0;
 }
 button {
     color: var(--peach);
     background-color: var(--grey);
+    /* min-width: 40%; */
     width: 350px;
     margin: .5em;
-    font-size: 3em;
+    font-size: 3vw;
     padding: 5px 10px;
 }
-/* .content#new-card-btn {
-    color: var(--peach);
-    background-color: var(--grey);
-    margin: .5em;
-    font-size: 3em;
-    padding: 5px 10px;
-} */
 button:hover {
     color: grey;
     background-color: lightgrey;
@@ -49,13 +49,36 @@ button:focus {
     box-shadow:         inset 0 0 10px #000000;
     outline: none;
 }
-.navbar {
+button#join-btn {
+    font-size: 2vw;
+    width: 200px;
+}
+button#add-btn {
+    padding: 5px 0px 0px 5px;
+    width: 80px;
+    float: right;
+    margin-right: 5%;
+}
+
+.topnav {
+    /* float: left; */
     display: flex;
-    align-self: left;
+    padding: 14px 16px;
+    /* margin-bottom: 80px; */
 }
 #navbar-logo {
-    max-width: 100px;
+    /* max-width: 100px; */
+    height: 8%;
+    width: 8%;
 }
-.lobby, .draw {
-    font-size: 3.5em;
+.lobby, .draw, .topnav {
+    font-size: 3.5vw;
 }
+
+/* 768px */
+@media screen and (max-width: 44em) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+  }
