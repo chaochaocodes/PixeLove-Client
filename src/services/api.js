@@ -8,6 +8,13 @@ const headers = () => {
   };
 };
 
+const getRooms = () => {
+  return fetch(`${API_ROOT}/rooms`, {
+    method: "GET",
+    headers: headers()
+  }).then(roomData => roomData.json());
+}
+
 const newRoom = params => {
   return fetch(`${API_ROOT}/rooms`, {
     method: "POST",
@@ -34,7 +41,8 @@ const updateColor = data => {
 export const api = {
   room: {
     newRoom,
-    getRoom
+    getRoom,
+    getRooms
   },
   cell: {
     updateColor
