@@ -24,8 +24,8 @@ function Draw(props) {
   const sketchRef = useRef();
 
   const sketchInstance = p => {
-    const cols = 20, rows = 20;
     const { cells } = room;
+    const square = 20;
     cells.sort((a,b) => a.index - b.index)
     let colorPicker;
     const channel = cable.subscriptions.create(
@@ -45,23 +45,22 @@ function Draw(props) {
       );
 
     p.setup = () => {
-      p.createCanvas(800, 800);
+      p.createCanvas(p.windowWidth / 2, p.windowWidth / 2);
       colorPicker = p.createColorPicker("#ed225d");
       colorPicker.position(0, p.height + 5);
       p.strokeWeight(0.2);
-      console.log(room)
     };
 
     p.draw = () => {
-      for (var i = 0; i < cols; i++) {
-        for (var j = 0; j < rows; j++) {
-          const index = i + j * cols;
+      for (var i = 0; i < square; i++) {
+        for (var j = 0; j < square; j++) {
+          const index = i + j * 20;
           p.fill(cells[index].color || "ffffff");
           p.rect(
-            p.map(i, 0, cols, 0, p.width),
-            p.map(j, 0, rows, 0, p.width),
-            p.map(i + 1, 0, cols, 0, p.width),
-            p.map(j + 1, 0, rows, 0, p.width)
+            p.map(i, 0, 20, 0, p.width),
+            p.map(j, 0, 20, 0, p.width),
+            p.map(i + 1, 0, 20, 0, p.width),
+            p.map(j + 1, 0, 20, 0, p.width)
           );
         }
       }
@@ -71,9 +70,9 @@ function Draw(props) {
     p.websocket = () => {
       const { mouseX, mouseY, width, height, map } = p;
       if (mouseX < width && mouseY < height && mouseX > 0 && mouseY > 0) {
-        const x = Math.floor(map(mouseX, 0, width, 0, cols));
-        const y = Math.floor(map(mouseY, 0, height, 0, rows));
-        const index = x + y * cols;
+        const x = Math.floor(map(mouseX, 0, width, 0, 20));
+        const y = Math.floor(map(mouseY, 0, height, 0, 20));
+        const index = x + y * square;
         api.cell.updateColor({id: cells[index].id, color: colorPicker.value()})
         // print out the id
       }
@@ -88,11 +87,13 @@ function Draw(props) {
     };
 
     p.changeColor = (data) => {
-        console.log(data)
         const { index, color} = data.cell
         cells[index].color = color
-        console.log()
         p.loop();
+    }
+
+    p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth / 2, p.windowWidth / 2);
     }
   };
 
