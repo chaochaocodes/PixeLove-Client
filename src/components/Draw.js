@@ -100,9 +100,7 @@ function Draw() {
               title: "This is a random room"
           }
       })
-    }).then(response => response.json()).then(json => {
-        console.log(json)
-    });
+    }).then(response => response.json()).then(json);
   };
 
   return (
