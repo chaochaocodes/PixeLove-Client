@@ -13,16 +13,19 @@ function Draw(){
     }
 
     return(
-
-        <div className="content">
-            <Navbar/>
+        <>
+        <Navbar/><br></br>
+        <div className="content" align="center">
             <div className="draw">
                 <div style={styleGrey}>How about we draw... </div>
                 <div style={stylePeach} >a Mother's Day card</div>
             </div>
+
             <button type="submit" className="button-style"> Back </button>
+            {/* <button type="submit" className="button-style"> Save </button> */}
             <button type="submit" className="button-style"> Submit </button>
         </div>
+        </>
     )
 }
 

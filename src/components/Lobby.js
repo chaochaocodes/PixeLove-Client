@@ -11,18 +11,22 @@ function Lobby(){
 
     return(
         <> 
-        <div className="content">
         <Navbar/>
-            <div className="lobby" style={styleGrey}>
+        {/* <div className="content" align="center"> */}
+            <div className="lobby" style={styleGrey} align="center">
                 The Lobby
             </div>
-
             <div id="join-card">
-                <Link to="/draw"><button type="button">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
+                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
             </div>
 
-            <button id="new-card-btn" type="submit" className="button-style"> + </button>
-        </div>
+            <button type="submit" id="add-btn"> + </button>
+        {/* </div> */}
         </>
     )
 }
