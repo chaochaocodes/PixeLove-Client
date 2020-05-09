@@ -25,7 +25,7 @@ function Lobby(){
                 <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
             </div>
 
-            <button type="text" class="text" id="add-btn"> + </button>
+            <button type="text" id="add-btn"> + </button>
         </div>
         </>
     )
