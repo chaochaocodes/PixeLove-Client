@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import {Link} from 'react-router-dom';
+import { api } from "../services/api";
 
 function Lobby(){
 
@@ -8,6 +9,12 @@ function Lobby(){
         color: "#6B6B6B",
         paddingTop: "10px",
     }
+
+
+    const createRoom = () => {
+        console.log("I am here");
+        api.room.newRoom().then(json => console.log(json));
+      };
 
     return(
         <> 
@@ -18,14 +25,10 @@ function Lobby(){
             </div>
             <div id="join-card">
                 <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
-                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
-                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
-                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
-                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
-                <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
             </div>
 
-            <button type="text" class="text" id="add-btn"> + </button>
+            <button onClick={() => createRoom()}>Create Room</button>
+
         </div>
         </>
     )

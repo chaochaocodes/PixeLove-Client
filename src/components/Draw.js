@@ -2,8 +2,16 @@ import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import actioncable from "actioncable";
 import p5 from "p5";
+import { api } from "../services/api"
 
-function Draw() {
+function Draw(props) {
+
+    useEffect(() => {
+        api.room.getRoom(1).then(json => {
+            console.log(json)
+        })
+    })
+
   const sketchRef = useRef();
   const cable = actioncable.createConsumer(
     "wss://pixelove-server-app.herokuapp.com/cable"
@@ -25,8 +33,8 @@ function Draw() {
   );
 
   const sketch = p => {
-    const cols = 50,
-      rows = 50;
+    const cols = 20,
+      rows = 20;
     const grid = new Array(cols * rows).fill("ffffffff");
     let colorPicker;
 
@@ -60,7 +68,7 @@ function Draw() {
         const y = Math.floor(map(mouseY, 0, height, 0, rows));
         const index = x + y * cols;
         grid[index] = colorPicker.value();
-        channel.send({ text: "hello" });
+        // print out the id
       }
       p.loop();
     };
@@ -88,20 +96,7 @@ function Draw() {
 
   const handleClick = () => {};
 
-  const createRandoRoom = () => {
-    fetch("https://localhost:3000/rooms", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-          room:
-          {
-              title: "This is a random room"
-          }
-      })
-    }).then(response => response.json()).then(json);
-  };
+  
 
   return (
     <>
@@ -123,7 +118,6 @@ function Draw() {
           Submit{" "}
         </button>
       </div>
-      <button onClick={createRandoRoom()}>Create Room</button>
     </>
   );
 }
