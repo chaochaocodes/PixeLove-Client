@@ -15,7 +15,7 @@ function App() {
             <Route exact path="/"><Landing/></Route>
             <Route path="/enter" component={routerProps => <NameForm {...routerProps}/>}/>
             <Route path="/lobby"><Lobby/></Route>
-            <Route path="/draw" component={routerProps => <Draw {...routerProps}/>}/>
+            <Route path="/room/:id" component={routerProps => <Draw {...routerProps}/>}/>
          </Switch>
       </Router>
       </div>

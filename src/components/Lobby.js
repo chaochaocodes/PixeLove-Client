@@ -27,8 +27,8 @@ function Lobby(){
 
             <button type="text" id="add-btn"> + </button>
         </div>
-        </>
-    )
+    </>
+  );
 }
 
 export default Lobby;
