@@ -104,10 +104,10 @@ function Draw(props) {
     paddingTop: "10px"
   };
 
-  const goBack = () => {
-    props.history.push('/lobby');
-};
-  // const handleClick = () => {};
+
+  const handleClick = () => {
+    props.history.push('/lobby')
+  };
 
   return (
     <>
@@ -120,7 +120,7 @@ function Draw(props) {
 
         <div ref={sketchRef}>{/* p5 sketch goes in heeya */}</div>
 
-        <button onClick={goBack} type="submit" id="draw-btn">
+        <button onClick={handleClick} type="submit" id="draw-btn">
           {" "}
           Back{" "}
         </button>
