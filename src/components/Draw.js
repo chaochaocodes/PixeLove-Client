@@ -8,37 +8,37 @@ function Draw(props) {
 
     const [room, setRoom] = useState({})
     const [sketch, setSketch] = useState({})
+    const [channel, setChannel] = useState({})
 
     useEffect(() => {
         api.room.getRoom(1).then(json => {
             setRoom(json)
         })
-        console.log(room.hasOwnProperty("id"))
         if (room.hasOwnProperty("id")) {
             setSketch(new p5(sketchInstance, sketchRef.current));
+            const cable = actioncable.createConsumer(
+                WS_ROOT
+              );
+            
+              setChannel(cable.subscriptions.create(
+                {
+                  channel: "RoomChannel",
+                  id: room.id
+                },
+                {
+                  connected: () => {
+                    console.log("connected!");
+                  },
+                  disconnected: () => {},
+                  received: data => {
+                    sketch.changeColor(data)
+                  }
+                }
+              ));
         }
     }, [room.hasOwnProperty("id")])
 
   const sketchRef = useRef();
-  const cable = actioncable.createConsumer(
-    WS_ROOT
-  );
-
-  const channel = cable.subscriptions.create(
-    {
-      channel: "RoomChannel",
-      id: room.id
-    },
-    {
-      connected: () => {
-        console.log("connected!");
-      },
-      disconnected: () => {},
-      received: data => {
-        sketch.changeColor(data)
-      }
-    }
-  );
 
   const sketchInstance = p => {
     const cols = 20, rows = 20;
