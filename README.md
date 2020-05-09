@@ -1,26 +1,49 @@
-# Personae
+# PixeLove
 
-## Motivation
+PixeLove is a collaborative drawing tool for creating adorable pixel art themed cards for loved ones!
 
-Paragraph Blurb Here
+## Getting Started
 
-## Features
+1) Clone the frontend to your machine (https://github.com/shawnhuangfernandes/PixeLove-Client)
+2) Clone the backend to your machine (https://github.com/shawnhuangfernandes/PixeLove-Server)
+3) run the backend on port 3000 by using ```rails s```
+4) install frontend dependencies using ```npm i```
+5) run the frontend on port 3001 using ```npm start```
+6) edit/use the app!
 
--  Features/User Stories Here
+### Prerequisites
 
-## Technologies Used 
-- React 
-- TypeScript
-- Tailwind 
+TBD
 
-## Installation
+### Installing
 
-Installation and setup steps coming soon!
+1) Clone the frontend to your machine (https://github.com/shawnhuangfernandes/PixeLove-Client)
+2) Clone the backend to your machine (https://github.com/shawnhuangfernandes/PixeLove-Server)
+3) run the backend on port 3000 by using ```rails s```
+4) install frontend dependencies using ```npm i```
+5) run the frontend on port 3001 using ```npm start```
+6) edit/use the app!
+
+A Demo is the works!
+
+## Running the tests
+
+TBD
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit a pull request or let me know of any improvements I could make! This is a learning environment so all levels are welcome =)
+TBD 
+
+## Authors
+
+**Alicia Chao** 
+**Christian Kastner**
+**Shawn Huang Fernandes**
 
 ## License
 
-This project is licensed under [MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+DemocracyLab - For providing a Hackathon space to work on this project!
