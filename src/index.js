@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
 import './styles.css' // <- change './index.css' to './styles.css'
 import './index.css'
-=======
-import './index.css';
->>>>>>> 8c951b09344c382bf2c91a56a07262b73e68a73f
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './fonts/04B_30__.TTF'
