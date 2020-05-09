@@ -22,7 +22,7 @@ function Landing(){
             <div id="landing-logo">
                 <img src={logo} alt="logo" />
             </div>
-            <Link to="/lobby"> <button type="button">Enter</button></Link>
+            <Link to="/enter"> <button type="button">Enter</button></Link>
         </div>
     )
 }

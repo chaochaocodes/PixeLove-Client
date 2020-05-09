@@ -12,11 +12,11 @@ function Navbar(){
 
     return(
         <div className="topnav" >
-                <Link to="/" style={styleGrey}>Pixe</Link>
-                <Link to="/" style={stylePink}>Love</Link>
-                <div id="navbar-logo">
-                    <Link to="/"><img src={navlogo} alt="logo"/></Link> 
-                </div>
+            <Link id="nav-link" to="/" style={styleGrey}>Pixe</Link>
+            <Link id="nav-link" to="/" style={stylePink}>Love</Link>
+            <div id="navbar-logo">
+                <Link className="nav-link" to="/"><img src={navlogo} alt="logo"/></Link> 
+            </div>
         </div>
     )
 }

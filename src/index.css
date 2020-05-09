@@ -19,24 +19,26 @@ body.content {
     justify-content: center;
         align-items: center;
 }
-#landing-logo {
-    height: 54%;
-    width: 54%;
+#landing-logo img {
+    /* height: 30%; */
+    width: 55%;
 }
 .title {
     display: flex;
     justify-content: center;
     font-size: 7vw;
-    padding: 0 0;
+    padding: 10px 0;
 }
 button {
     color: var(--blush);
     background-color: var(--grey);
+    font-family: DaFont;
+    text-align: center;
     /* min-width: 40%; */
-    width: 300px;
+    width: 280px;
     margin: .5em;
     font-size: 3vw;
-    padding: 10px 10px;
+    padding: 10px 30px;
 }
 button:hover {
     color: grey;
@@ -53,16 +55,23 @@ button#join-btn {
     font-size: 2vw;
     width: 200px;
 }
+button#draw-btn {
+    font-size: 2vw;
+    /* width: 390px ; */
+}
 button#add-btn {
-    padding: 5px 0px 0px 5px;
+    padding: 10px 5px 5px 10px;
     /* padding-top: 100%; 1:1 Aspect Ratio
     position: relative;
     display: block;
     width: 100%; */
-    width: 70px;
+    width: 80px;
     float: right;
     margin-right: 5%;
     font-size: 4vw;
+}
+button#name-btn {
+    height: 100px;
 }
 .topnav {
     /* float: left; */
@@ -70,15 +79,47 @@ button#add-btn {
     padding: 14px 16px;
     font-size: 3vw;
     margin-left: 2%;
+    text-decoration: none;
     /* margin-bottom: 80px; */
 }
-#navbar-logo {
+#nav-link {
+    text-decoration: inherit;
+    vertical-align: bottom;
+    justify-content: center;
+    align-items: flex-end;
+}
+#navbar-logo img {
     /* max-width: 100px; */
-    height: 6%;
-    width: 6%;
+    /* height: 5%; */
+    vertical-align: text-top;
+    width: 7%;
 }
 .lobby, .draw {
     font-size: 4vw;
+}
+form.enter {
+    margin: 30px;
+    padding: 20px 0 ;
+    border-radius: 5px;
+    border: 5px solid;
+    border-color: var(--grey);
+    background-color: white;
+    box-sizing: border-box;
+    opacity: 0.8;
+    width: 40%;
+    /* height: 60%; */
+    font-size: 2.5vw;
+}
+.enter#user {
+    padding: 20px;
+    margin: 20px;
+}
+input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 15px 0 0 0;
+    box-sizing: border-box;
+    font-size:24px;
 }
 
 #join-container {
