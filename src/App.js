@@ -13,7 +13,7 @@ function App() {
          <Switch>
             <Route exact path="/"><Landing/></Route>
             <Route path="/lobby"><Lobby/></Route>
-            <Route path="/draw"><Draw/></Route>
+            <Route path="/room/:id"><Draw/></Route>
          </Switch>
       </Router>
       </div>
