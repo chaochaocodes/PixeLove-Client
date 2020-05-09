@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-function Draw(){
+function Draw(props){
 
     const styleCoral = {
         color: "#e6847b",
@@ -12,6 +12,10 @@ function Draw(){
         paddingTop: "10px",
     }
 
+    const goBack = () => {
+        props.history.push('/lobby');
+    };
+
     return(
         <>
         <Navbar/>
@@ -21,9 +25,9 @@ function Draw(){
                 <div style={styleCoral} >a Mother's Day card</div>
             </div>
 
-            <button type="submit" className="button-style"> Back </button>
+            <button onClick={goBack} type="submit" id="draw-btn"> Back </button>
             {/* <button type="submit" className="button-style"> Save </button> */}
-            <button type="submit" className="button-style"> Submit </button>
+            <button type="submit" id="draw-btn"> Submit </button>
         </div>
         </>
     )
