@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles.css' // <- change './index.css' to './styles.css'
+import './index.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './fonts/04B_30__.TTF'
