@@ -129,7 +129,7 @@ input[type=text] {
     border-width: 4px;
     border-color: var(--grey);
     width: 1100px;
-    height: 65vh;
+    height: 60vh;
 }
 
 .modal {
