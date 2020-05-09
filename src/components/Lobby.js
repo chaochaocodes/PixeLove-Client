@@ -10,7 +10,7 @@ function Lobby() {
     api.room.getRooms().then(json => {
       setRooms(json);
     });
-  });
+  }, []);
 
   const styleGrey = {
     color: "#6B6B6B",
@@ -31,16 +31,16 @@ function Lobby() {
         {rooms.map(room => {
           return (
             <div id="join-card">
-              <Link to="/draw">
+              <Link to={`/room/${room.id}`}>
                 <button type="button" id="join-btn">
-                  Join {room.id}
+                  Join Room {room.id}
                 </button>
               </Link>
             </div>
           );
         })}
 
-        <button onClick={() => createRoom()}>Create Room</button>
+        <button onClick={() => createRoom()}>+</button>
       </div>
     </>
   );
