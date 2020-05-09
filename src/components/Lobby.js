@@ -5,7 +5,6 @@ import { api } from "../services/api";
 
 function Lobby() {
   const [rooms, setRooms] = useState([]);
-  const inputEl = useRef(null);
 
   useEffect(() => {
     api.room.getRooms().then(json => {
@@ -42,15 +41,7 @@ function Lobby() {
           })}
         </div>
 
-        {/* <button onClick={() => createRoom()}>+</button> */}
-        <button id="myBtn">Open Modal</button>
-
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-          </div>
-        </div>
+        <button onClick={() => createRoom()}>+</button>
       </div>
     </>
   );
