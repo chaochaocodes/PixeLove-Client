@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "./Navbar";
+import useModal from './useModal';
+import Modal from './Modal';
+
 import { Link } from "react-router-dom";
 import { api } from "../services/api";
 
@@ -21,9 +24,13 @@ function Lobby() {
     api.room.newRoom().then(json => console.log(json));
   };
 
+  // MODAL STATE 
+  const {isShowing, toggle} = useModal();
+
   return (
     <>
       <Navbar />
+
       <div className="content" align="center">
         <div className="lobby" style={styleGrey}>
           The Lobby
@@ -42,6 +49,10 @@ function Lobby() {
         </div>
 
         <button onClick={() => createRoom()}>+</button>
+        <button onClick={toggle}> Modal </button>
+        <Modal
+          isShowing={isShowing}
+          hide={toggle} />
       </div>
     </>
   );
