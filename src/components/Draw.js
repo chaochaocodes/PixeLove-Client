@@ -6,6 +6,19 @@ import { api } from "../services/api"
 
 function Draw(props) {
 
+  const styleCoral = {
+    color: "#e6847b",
+    paddingTop: "10px"
+    };
+    const styleGrey = {
+    color: "#6B6B6B",
+    paddingTop: "10px"
+    };
+    
+    const goBack = () => {
+        props.history.push('/lobby');
+    };
+
     useEffect(() => {
         api.room.getRoom(1).then(json => {
             console.log(json)
@@ -72,71 +85,29 @@ function Draw(props) {
       }
       p.loop();
     };
-
-<<<<<<< HEAD
-    const goBack = () => {
-        props.history.push('/lobby');
-    };
-
-    return(
-        <>
-        <Navbar/>
-        <div className="content" align="center">
-            <div className="draw">
-                <div style={styleGrey}>How about we draw... </div>
-                <div style={styleCoral} >a Mother's Day card</div>
-            </div>
-
-            <button onClick={goBack} type="submit" id="draw-btn"> Back </button>
-            {/* <button type="submit" className="button-style"> Save </button> */}
-            <button type="submit" id="draw-btn"> Submit </button>
-=======
-    p.mouseDragged = () => {
-      p.colorSquare();
-    };
-
-    p.mouseClicked = () => {
-      p.colorSquare();
-    };
-  };
-
-  useEffect(() => {
-    const drawing = new p5(sketch, sketchRef.current);
-  }, []);
-  const styleCoral = {
-    color: "#e6847b",
-    paddingTop: "10px"
-  };
-  const styleGrey = {
-    color: "#6B6B6B",
-    paddingTop: "10px"
-  };
-
-  const handleClick = () => {};
-
+  }
   
-
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="content" align="center">
         <div className="draw">
-          <div style={styleGrey}>How about we draw... </div>
-          <div style={styleCoral}>a Mother's Day card</div>
->>>>>>> 044feb685468154fed526a34f0f3b27882444018
+            <div style={styleGrey}>How about we draw... </div>
+            <div style={styleCoral} >a Mother's Day card</div>
         </div>
+
         <div ref={sketchRef}>{/* p5 sketch goes in heeya */}</div>
 
-        <button type="submit" className="button-style" onClick={handleClick}>
+        <button onClick={goBack} type="submit" id="draw-btn">
           {" "}
           Back{" "}
         </button>
-        {/* <button type="submit" className="button-style"> Save </button> */}
-        <button type="submit" className="button-style">
+
+        <button type="submit" id="draw-btn">
           {" "}
           Submit{" "}
         </button>
-      </div>
+        </div>
     </>
   );
 }
