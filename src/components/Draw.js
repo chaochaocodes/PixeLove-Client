@@ -3,8 +3,8 @@ import Navbar from './Navbar';
 
 function Draw(){
 
-    const stylePeach = {
-        color: "#EFB0A1",
+    const styleCoral = {
+        color: "#e6847b",
         paddingTop: "10px",
     }
     const styleGrey = {
@@ -14,11 +14,11 @@ function Draw(){
 
     return(
         <>
-        <Navbar/><br></br>
+        <Navbar/>
         <div className="content" align="center">
             <div className="draw">
                 <div style={styleGrey}>How about we draw... </div>
-                <div style={stylePeach} >a Mother's Day card</div>
+                <div style={styleCoral} >a Mother's Day card</div>
             </div>
 
             <button type="submit" className="button-style"> Back </button>

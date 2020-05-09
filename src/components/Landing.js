@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../images/Untitled_Artwork-1 2 cropped.png';
+import logo from '../images/Untitled_Artwork-1 2.png';
 import {Link} from 'react-router-dom';
 
 
 function Landing(){
-    const stylePeach = {
-        color: "#EFB0A1",
+    const stylePink = {
+        color: "#ffa09a",
         paddingTop: "10px",
     }
     const styleGrey = {
@@ -17,7 +17,7 @@ function Landing(){
         <div className="content" align="center">
             <div className="title">
                 <div style={styleGrey} >Pixe</div>
-                <div style={stylePeach} >Love</div>
+                <div style={stylePink} >Love</div>
             </div>
             <div id="landing-logo">
                 <img src={logo} alt="logo" />

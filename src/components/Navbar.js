@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from '../images/Untitled_Artwork-1 2 cropped.png';
 import {Link} from 'react-router-dom';
-
+import navlogo from '../images/logo_slant.png'
 
 function Navbar(){
-    const stylePeach = {
-        color: "#EFB0A1",
+    const stylePink = {
+        color: "#ffa09a",
     }
     const styleGrey = {
         color: "#6B6B6B",
@@ -14,9 +13,9 @@ function Navbar(){
     return(
         <div className="topnav" >
                 <Link to="/" style={styleGrey}>Pixe</Link>
-                <Link to="/" style={stylePeach}>Love</Link>
+                <Link to="/" style={stylePink}>Love</Link>
                 <div id="navbar-logo">
-                    <Link to="/"><img src={logo} alt="logo"/></Link> 
+                    <Link to="/"><img src={navlogo} alt="logo"/></Link> 
                 </div>
         </div>
     )

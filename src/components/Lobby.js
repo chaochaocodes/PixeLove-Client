@@ -12,8 +12,8 @@ function Lobby(){
     return(
         <> 
         <Navbar/>
-        {/* <div className="content" align="center"> */}
-            <div className="lobby" style={styleGrey} align="center">
+        <div className="content" align="center">
+            <div className="lobby" style={styleGrey}>
                 The Lobby
             </div>
             <div id="join-card">
@@ -25,8 +25,8 @@ function Lobby(){
                 <Link to="/draw"><button type="button" id="join-btn">Join</button></Link>
             </div>
 
-            <button type="submit" id="add-btn"> + </button>
-        {/* </div> */}
+            <button type="text" class="text" id="add-btn"> + </button>
+        </div>
         </>
     )
 }
