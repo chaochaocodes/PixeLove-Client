@@ -2,11 +2,12 @@ import React, {useEffect, useRef} from 'react';
 import Navbar from './Navbar';
 import actioncable from 'actioncable'
 import p5 from "p5"
+import { WS_ROOT } from "../services/api"
 
 function Draw(){
 
     const sketchRef = useRef()
-    const cable = actioncable.createConsumer('wss://pixelove-server-app.herokuapp.com/cable')
+    const cable = actioncable.createConsumer(WS_ROOT)
     const channel = cable.subscriptions.create({
         channel: "RoomChannel",
         id: 2
