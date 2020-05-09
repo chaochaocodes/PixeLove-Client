@@ -8,7 +8,9 @@ function Draw(props) {
 
     const [room, setRoom] = useState({})
     const [sketch, setSketch] = useState({})
-    const [channel, setChannel] = useState({})
+    const [cable, setCable] = useState(actioncable.createConsumer(
+        WS_ROOT
+      ))
 
     useEffect(() => {
         api.room.getRoom(1).then(json => {
@@ -16,25 +18,6 @@ function Draw(props) {
         })
         if (room.hasOwnProperty("id")) {
             setSketch(new p5(sketchInstance, sketchRef.current));
-            const cable = actioncable.createConsumer(
-                WS_ROOT
-              );
-            
-              setChannel(cable.subscriptions.create(
-                {
-                  channel: "RoomChannel",
-                  id: room.id
-                },
-                {
-                  connected: () => {
-                    console.log("connected!");
-                  },
-                  disconnected: () => {},
-                  received: data => {
-                    sketch.changeColor(data)
-                  }
-                }
-              ));
         }
     }, [room.hasOwnProperty("id")])
 
@@ -45,6 +28,21 @@ function Draw(props) {
     const { cells } = room;
     cells.sort((a,b) => a.index - b.index)
     let colorPicker;
+    const channel = cable.subscriptions.create(
+        {
+          channel: "RoomChannel",
+          id: room.id
+        },
+        {
+          connected: () => {
+            console.log("connected!");
+          },
+          disconnected: () => {},
+          received: data => {
+            p.changeColor(data)
+          }
+        }
+      );
 
     p.setup = () => {
       p.createCanvas(800, 800);
@@ -79,7 +77,6 @@ function Draw(props) {
         api.cell.updateColor({id: cells[index].id, color: colorPicker.value()})
         // print out the id
       }
-      p.loop();
     };
 
     p.mouseDragged = () => {
@@ -92,6 +89,10 @@ function Draw(props) {
 
     p.changeColor = (data) => {
         console.log(data)
+        const { index, color} = data.cell
+        cells[index].color = color
+        console.log()
+        p.loop();
     }
   };
 
