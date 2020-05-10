@@ -99,7 +99,7 @@ function Draw(props) {
 
   const styleCoral = {
     color: "#e6847b",
-    paddingTop: "10px"
+    padding: "10px 0 15px 0"
   };
   const styleGrey = {
     color: "#6B6B6B",

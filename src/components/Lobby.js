@@ -41,7 +41,7 @@ function Lobby() {
             return (
               <Link to={`/room/${room.id}`}>
                 <button type="button" id="join-btn">
-                  Join Room {room.id}
+                Room {room.id}
                 </button>
               </Link>
             );
