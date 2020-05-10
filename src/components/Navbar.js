@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import navlogo from '../images/logo_slant.png'
+import navlogo from '../images/logo_navbar.png'
 
 function Navbar(){
     const stylePink = {
